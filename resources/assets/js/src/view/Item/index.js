@@ -1,12 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import Config from './common/Config';
-import Common from "./common/Common";
-import Paginate from "./common/Paginate"
-import TableRow from './TableRow'
+import Config from '../../components/common/Config';
+import Common from "../../components/common/Common";
+import Paginate from "../../components/common/Paginate";
+import TableRow from './TableRow';
+import BaseComponent from '../../components/Base/BaseComponent';
 
-class DisplayItem extends Component {
+class Index extends BaseComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -60,6 +61,7 @@ class DisplayItem extends Component {
             event.preventDefault();
             let uri = Config.baseUrl + '/items/' + id;
             axios.delete(uri).then((response) => {
+                toastr.success(response.data);
                 this.componentDidMount();
             }).catch(function (error) {
             });
@@ -144,4 +146,4 @@ class DisplayItem extends Component {
     }
 }
 
-export default DisplayItem;
+export default Index;

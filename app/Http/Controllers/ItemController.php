@@ -43,7 +43,7 @@ class ItemController extends Controller
         if ($validate->fails()) {
             return response()->json([
                 'errors' => $validate->errors()
-            ]);
+            ],422);
         }
         Item::create([
             'name' => $request->get('name'),
