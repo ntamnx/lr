@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class DeleteButton extends Component {
+class BtnDelete extends Component {
     constructor(props) {
         super(props)
     }
@@ -14,4 +14,4 @@ class DeleteButton extends Component {
     }
 }
 
-export default DeleteButton;
+export default BtnDelete;

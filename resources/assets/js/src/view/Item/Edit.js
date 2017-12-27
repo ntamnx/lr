@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import Config from './common/Config';
+import Config from '../../components/common/Config';
 
 class EditItem extends Component {
     constructor(props) {

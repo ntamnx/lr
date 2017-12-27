@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import Config from './common/Config';
-import Common from "./common/Common";
-import Paginate from "./common/Paginate"
+import Config from '../../components/common/Config';
+import Common from "../../components/common/Common";
+import Paginate from "../../components/common/Paginate"
 import TableRow from './TableRow'
 
-class DisplayItem extends Component {
+class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -144,4 +144,4 @@ class DisplayItem extends Component {
     }
 }
 
-export default DisplayItem;
+export default Index;
