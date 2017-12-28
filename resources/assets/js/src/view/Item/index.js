@@ -126,14 +126,15 @@ class Index extends BaseComponent {
                     </div>
                 </div>
                 <br/>
-                <table className="table table-hover">
+                <table className="table table_custom">
                     <thead>
                     <tr>
-                        <td><input type='checkbox' onChange={this.handleChangeAll} checked={this.state.check_all}/></td>
-                        <td>#</td>
-                        <td>{lang.common.item_name}</td>
-                        <td>{lang.common.item_price}</td>
-                        <td>{lang.common.action}</td>
+                        <th className='width-5 text-center'><input type='checkbox' onChange={this.handleChangeAll} checked={this.state.check_all}/></th>
+                        <th className='width-15 text-center'>#</th>
+                        <th className='width-25'>{lang.common.item_name}</th>
+                        <th className='width-25'>{lang.common.item_price}</th>
+                        <th className='width-15'>{lang.common.update}</th>
+                        <th className='width-15'>{lang.common.delete}</th>
                     </tr>
                     </thead>
                     <tbody>

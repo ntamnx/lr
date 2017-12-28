@@ -1,4 +1,3 @@
-
 window._ = require('lodash');
 
 /**
@@ -8,10 +7,11 @@ window._ = require('lodash');
  */
 
 try {
-    window.$ = window.jQuery = require('jquery');
+    window.$ = window.jQuery = require('../../AdminLTE-2.4.2/bower_components/jquery/dist/jquery.min');
 
     require('bootstrap-sass');
-} catch (e) {}
+} catch (e) {
+}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -23,6 +23,35 @@ window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+window.axios.interceptors.response.use(null, function (error) {
+    if (error.response.status === 401) {
+        window.location.replace(location.protocol + '//' + location.host + '/logout');
+    }
+    if (error.response.status === 500) {
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-full-width",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "9999",
+            "timeOut": "9999",
+            "extendedTimeOut": "9999",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+        let msg = error.response.data.message;
+        if (msg.length) {
+            toastr.error(msg)
+        }
+    }
+    return Promise.reject(error);
+});
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just

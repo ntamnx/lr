@@ -11,7 +11,7 @@ class TableRow extends Component {
     render() {
         return (
             <tr>
-                <td><input type="checkbox" checked={this.props.obj.check_flag ? this.props.obj.check_flag : ''}
+                <td className='text-center '><input type="checkbox" checked={this.props.obj.check_flag ? this.props.obj.check_flag : ''}
                            onChange={this.props.onChange}/></td>
                 <GetIndexList obj={this.props.st} index={this.props.index}/>
                 <td>

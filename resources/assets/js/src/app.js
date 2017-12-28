@@ -9,7 +9,6 @@ function Render() {
     if (typeof user !== "undefined") {
         return (
             <div className='container-fluid'>
-                <Header/>
                 <Router/>
             </div>
         )

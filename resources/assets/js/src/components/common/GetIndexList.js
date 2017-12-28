@@ -7,7 +7,7 @@ class GetIndexList extends Component {
 
     render() {
         return (
-            <td className='width-20'>
+            <td className='text-center'>
                 {(this.props.obj.activePage - 1) * this.props.obj.itemsCountPerPage + (this.props.index + 1)}
             </td>
         );

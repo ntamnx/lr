@@ -36,9 +36,10 @@ class Add extends Component {
         e.preventDefault();
         let uri = Config.baseUrl + '/items';
         Common.showLoading();
-        axios.post(uri, this.state.product).then(() => {
+        axios.post(uri, this.state.product).then((response) => {
             Common.removeValidateMsg();
             Common.hideLoading();
+            toastr.success(response.data)
             this.props.history.push('/index');
         }).catch(function (error) {
             Common.removeValidateMsg();
@@ -46,24 +47,19 @@ class Add extends Component {
             Common.hideLoading();
         })
     }
-
-    Main() {
-        return ( <main>
-            <Switch>
-                <Route exact path='/' component={Home}/>
-                <Route path='/add' component={CreateItem}/>
-                <Route path='/index' component={Display}/>
-            </Switch>
-        </main>)
-    }
-
     render() {
         return (
-            <form onSubmit={this.handleSubmit} ref="bar">
-                <InputText title='Name' name='name' onChange={this.handleChangeName}/>
-                <InputText title='Price' name='price' onChange={this.handleChangePrice}/>
-                <BtnPrimary text={lang.add_item}/>
-            </form>
+            <div className="panel panel-default">
+                <div className="panel-heading ">Add item</div>
+                <div className="panel-body">
+                    <form onSubmit={this.handleSubmit} ref="bar">
+                        <InputText title='Name' name='name' onChange={this.handleChangeName}/>
+                        <InputText title='Price' name='price' onChange={this.handleChangePrice}/>
+                        <BtnPrimary text={lang.add_item}/>
+                    </form>
+                </div>
+            </div>
+
         )
     }
 }

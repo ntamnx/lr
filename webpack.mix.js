@@ -13,4 +13,8 @@ let mix = require('laravel-mix');
 
 mix.react('resources/assets/js/src/app.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css');
-mix.scripts(['resources/assets/plugins/toast/toastr.min.js'], 'public/js/all.js')
+mix.scripts([
+        'resources/AdminLTE-2.4.2/dist/js/adminlte.min.js',
+        'resources/assets/plugins/toast/toastr.min.js'
+    ],
+    'public/js/all.js')

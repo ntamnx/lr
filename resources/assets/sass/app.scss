@@ -2,7 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 // Variables
 @import "variables";
-// Bootstrap
 @import "../plugins/toast/toastr.min.css";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../AdminLTE-2.4.2/bower_components/bootstrap/dist/css/bootstrap.min.css";
+@import "../../AdminLTE-2.4.2/bower_components/font-awesome/css/font-awesome.min.css";
+@import "../../AdminLTE-2.4.2/dist/css/AdminLTE.min.css";
+@import "../../AdminLTE-2.4.2/dist/css/skins/_all-skins.min.css";
 @import "styleCustom";

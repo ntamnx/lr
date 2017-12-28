@@ -7,7 +7,7 @@ class TypeText extends Component {
 
     render() {
         return (<div className="row">
-            <div className="col-md-6">
+            <div className="col-xs-12">
                 <div className="form-group">
                     <label>{this.props.title}</label>
                     <input type="text" name={this.props.name} className="form-control"
