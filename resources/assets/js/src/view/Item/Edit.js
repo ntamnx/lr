@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import Config from './common/Config';
+import Config from '../../components/common/Config';
 
 class EditItem extends Component {
     constructor(props) {
@@ -43,7 +43,7 @@ class EditItem extends Component {
         }
         let uri = Config.baseUrl + '/items/' + this.props.match.params.id;
         axios.patch(uri, products).then((response) => {
-            this.props.history.push('/index');
+            this.props.history.push('/item/index');
         });
     }
 

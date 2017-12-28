@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import GetIndexList from './common/GetIndexList';
-import DeleteButton from './common/DeleteButton'
+import GetIndexList from '../../components/common/GetIndexList';
+import BtnDelete from '../../components/Button/BtnDelete'
 
 class TableRow extends Component {
     constructor(props) {
@@ -21,10 +21,10 @@ class TableRow extends Component {
                     {this.props.obj.price}
                 </td>
                 <td>
-                    <Link to={"index/edit/" + this.props.obj.id} className="btn btn-primary">Edit</Link>
+                    <Link to={"/index/edit/" + this.props.obj.id} className="btn btn-primary">Edit</Link>
                 </td>
                 <td>
-                    <DeleteButton onSubmit={this.props.onSubmit}/>
+                    <BtnDelete onSubmit={this.props.onSubmit}/>
                 </td>
             </tr>
         );

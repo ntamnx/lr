@@ -80,3 +80,4 @@ fabric.properties
 
 # End of https://www.gitignore.io/api/phpstorm
 _ide_helper.php
+.phpstorm.meta.php

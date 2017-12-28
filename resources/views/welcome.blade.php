@@ -15,5 +15,6 @@
 <div id="root"></div>
 @include('partials.footer')
 <script src="{{asset('js/app.js')}}"></script>
+<script src="{{asset('js/all.js')}}"></script>
 </body>
 </html>

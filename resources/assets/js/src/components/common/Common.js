@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 
 class Common extends Component {
     validateMsg(response) {
-        $('.row .form-group').removeClass('has-error');
-        $('.row .form-group').find('span').remove();
         if (response.data.errors) {
             $.each(response.data.errors, function (key, value) {
                 var msgError = '<span class="help-block">' + value + '</span>';
@@ -20,6 +18,11 @@ class Common extends Component {
 
     showLoading() {
         $('#div_loading').show();
+    }
+
+    removeValidateMsg() {
+        $('.row .form-group').removeClass('has-error');
+        $('.row .form-group').find('span').remove();
     }
 
 }
